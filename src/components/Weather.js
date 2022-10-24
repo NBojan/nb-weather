@@ -8,8 +8,8 @@ import { dayImg, nightImg } from "../assets/images";
 import { SET_LOADING, UPDATE_SEARCH, SET_ERROR, SET_DATA } from "../assets/actions";
 
 const key = process.env.REACT_APP_KEY;
-const cityBase = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${key}&`;
-const weatherBase = `http://dataservice.accuweather.com/currentconditions/v1/locationKey?apikey=${key}&`;
+const cityBase = `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${key}&`;
+const weatherBase = `https://dataservice.accuweather.com/currentconditions/v1/locationKey?apikey=${key}&`;
 const storageCity = localStorage.cityWeather || "";
 const storageDark = localStorage.darkWeather ? JSON.parse(localStorage.darkWeather) : false;
 
