@@ -11,7 +11,7 @@ const key = process.env.REACT_APP_KEY;
 const cityBase = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${key}&`;
 const weatherBase = `http://dataservice.accuweather.com/currentconditions/v1/locationKey?apikey=${key}&`;
 const storageCity = localStorage.cityWeather || "";
-const storageDark = JSON.parse(localStorage.darkWeather) || false;
+const storageDark = localStorage.darkWeather ? JSON.parse(localStorage.darkWeather) : false;
 
 const initialState = {
     search: storageCity,
