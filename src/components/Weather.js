@@ -43,6 +43,7 @@ const Weather = () => {
                 dispatch({type: SET_DATA, payload: {cityObject, weatherObject}});
                 localStorage.setItem("cityWeather", state.search);
                 toast.success("Weather acquired :)");
+                window.scrollTo({top: document.body.scrollHeight, left: 0, behavior: "smooth"});
             }
         }
     }
