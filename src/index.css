@@ -136,10 +136,10 @@ input {
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--bg-input);
   box-shadow: var(--dark-shadow);
   border-radius: 8px;
-  transition: all .2s ease-in-out;
+  transition: box-shadow .2s ease-in-out;
 }
 .card:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -169,7 +169,7 @@ input {
 .info {
   padding: 16px;
   font-family: var(--headingFont);
-  color: var(--clr-grey-2);
+  color: var(--clr-input);
 }
 .country {
   letter-spacing: .5px;
@@ -178,14 +178,14 @@ input {
   font-size: 18px;
   letter-spacing: 1.5px;
   margin-bottom: 12px;
-  color: var(--clr-grey-5);
-  transition: all .2s linear;
+  color: var(--clr-title);
+  transition: font-size .2s linear;
 }
 .degrees {
   font-size: 40px;
   font-family: var(--headingFont);
-  color: var(--clr-grey-5);
-  transition: all .2s linear;
+  color: var(--clr-title);
+  transition: font-size .2s linear;
 }
 
 .Toastify__toast {
@@ -205,6 +205,6 @@ input {
     font-size: 16px;
   }
   .degrees {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
