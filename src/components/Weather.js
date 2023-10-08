@@ -9,7 +9,7 @@ import { SET_LOADING, UPDATE_SEARCH, SET_ERROR, SET_DATA } from "../assets/actio
 
 const key = process.env.REACT_APP_KEY;
 const cityBase = `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${key}&`;
-const weatherBase = `https://dataservice.accuweather.com/currentconditions/v1/locationKey?apikey=${key}&`;
+const weatherBase = `https://dataservice.accuweather.com/currentconditions/v1`;
 const storageCity = localStorage.cityWeather || "";
 const storageDark = localStorage.darkWeather ? JSON.parse(localStorage.darkWeather) : false;
 
@@ -34,7 +34,7 @@ const Weather = () => {
         if(cityResponse.data.length < 1) dispatch({type: SET_ERROR, payload: "Couldn't find that place, try something else."});
         if(cityResponse.data.length > 0){
             const cityObject = cityResponse.data[0];
-            const weatherResponse = await axios(`${weatherBase}locationKey=${cityObject.Key}`)
+            const weatherResponse = await axios(`${weatherBase}/${cityObject.Key}?apikey=${key}`)
             .catch(error => dispatch({type: SET_ERROR, payload: error.message}));
 
             if(!weatherResponse) return;
